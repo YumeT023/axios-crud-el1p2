@@ -46,11 +46,11 @@ export function Sidebar() {
     <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
       <div className="sb-sidenav-menu">
         <div className="nav">
-          {sidebarItems.map((sideBarItem) =>
+          {sidebarItems.map((sideBarItem, index) =>
             sideBarItem.type === "heading" ? (
-              <SidebarMenuHeading {...sideBarItem} />
+              <SidebarMenuHeading {...sideBarItem} key={index} />
             ) : (
-              <NavLink {...sideBarItem} />
+              <NavLink {...sideBarItem} key={index} />
             )
           )}
         </div>

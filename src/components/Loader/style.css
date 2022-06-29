@@ -1,0 +1,80 @@
+.wrapper {
+    position: fixed;
+    z-index: 9999;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 0, 0.7);
+}
+
+.loader-container {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+@-moz-keyframes refreshing-loader {
+    0% {
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes refreshing-loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes refreshing-loader {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/* :not(:required) hides this rule from IE9 and below */
+.refreshing-loader:not(:required) {
+    -moz-animation: refreshing-loader 1000ms infinite linear;
+    -webkit-animation: refreshing-loader 1000ms infinite linear;
+    animation: refreshing-loader 1000ms infinite linear;
+    -moz-border-radius: 2.4em;
+    -webkit-border-radius: 2.4em;
+    border-radius: 2.4em;
+    border: 0.4em solid #046cff;
+    border-left-color: transparent;
+    color: transparent;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 1.2;
+    width: 3em;
+    height: 3em;
+    text-indent: 100%;
+}
+.refreshing-loader:not(:required):after {
+    display: block;
+    border: 0.5em solid transparent;
+    border-top-color: #0c63e4;
+    border-left-color: #0c63e4;
+    content: '';
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin-left: -0.2em;
+    margin-top: 1em;
+}
